@@ -23,16 +23,19 @@ public class ClienteController {
         return Response.ok(clienteService.findAll()).build();
     }
     @GET
+    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findById(@PathParam("id") Long id) {
+    public Response findById(Long id) {
         return Response.ok(clienteService.findById(id)).build();
     }
     @GET
+    @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findByName(@PathParam("name") String name) {
+    public Response findByName(String name) {
         return Response.ok(clienteService.findByName(name)).build();
     }
     @GET
+    @Path("{contar}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response count() {
         return Response.ok(clienteService.count()).build();

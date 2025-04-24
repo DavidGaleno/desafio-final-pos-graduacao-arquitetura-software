@@ -1,15 +1,15 @@
 package galeno.david.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Table(name = "clientes")
+@Table(name = "cliente")
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
