@@ -13,6 +13,6 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
     }
 
     public void updateById(String name, String email, Long id) {
-        update("update Cliente c set c.name = :name abd c.email = :email where p.id = :id", Parameters.with("name",name).and("email",email).and("id",id));
+        update("update Cliente c set c.name = :name, c.email = :email where c.id = :id", Parameters.with("name",name).and("email",email).and("id",id));
     }
 }

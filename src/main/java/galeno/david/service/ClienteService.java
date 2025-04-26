@@ -5,6 +5,7 @@ import galeno.david.model.Cliente;
 import galeno.david.repository.ClienteRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -31,15 +32,17 @@ public class ClienteService {
     }
 
 
+    @Transactional
     public void create(Cliente cliente) {
         clienteRepository.persist(cliente);
     }
 
+    @Transactional
     public void update(Cliente cliente,Long id) {
         clienteRepository.updateById(cliente.getName(),cliente.getEmail(),id);
     }
 
-
+    @Transactional
     public void delete(Long id) {
         clienteRepository.deleteById(id);
     }

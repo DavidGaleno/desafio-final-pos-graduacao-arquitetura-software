@@ -19,23 +19,22 @@ public class ClienteController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findAll() {
+    public Response findAll(@QueryParam("name") String name) {
+        if (name != null && !name.isEmpty()) {
+            return Response.ok(clienteService.findByName(name)).build();
+        }
         return Response.ok(clienteService.findAll()).build();
     }
+
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findById(Long id) {
+    public Response findById(@PathParam("id") Long id) {
         return Response.ok(clienteService.findById(id)).build();
     }
+
     @GET
-    @Path("{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response findByName(String name) {
-        return Response.ok(clienteService.findByName(name)).build();
-    }
-    @GET
-    @Path("{contar}")
+    @Path("contar")
     @Produces(MediaType.APPLICATION_JSON)
     public Response count() {
         return Response.ok(clienteService.count()).build();
@@ -53,7 +52,8 @@ public class ClienteController {
 
         return Response.created(uri).build();
     }
-    @PATCH
+    @Path("{id}")
+    @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response update(Cliente cliente, @PathParam("id") Long id) {
@@ -62,6 +62,7 @@ public class ClienteController {
 
     }
 
+    @Path("{id}")
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
