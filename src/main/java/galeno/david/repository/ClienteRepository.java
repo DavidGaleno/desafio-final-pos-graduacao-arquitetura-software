@@ -8,11 +8,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class ClienteRepository implements PanacheRepository<Cliente> {
 
-    public Cliente findByName(String name) {
-        return find("name", name).firstResult();
+    public Cliente findByName(String nome) {
+        return find("nome", nome).firstResult();
     }
 
-    public void updateById(String name, String email, Long id) {
-        update("update Cliente c set c.name = :name, c.email = :email where c.id = :id", Parameters.with("name",name).and("email",email).and("id",id));
+    public void updateById(String nome, String email, Long id) {
+        update("update Cliente c set c.nome = :nome, c.email = :email where c.id = :id", Parameters.with("nome",nome).and("email",email).and("id",id));
     }
 }

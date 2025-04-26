@@ -3,6 +3,7 @@ package galeno.david.controller;
 import galeno.david.model.ClienteDTO;
 import galeno.david.service.ClienteServiceImpl;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 import org.eclipse.microprofile.openapi.annotations.Operation;
@@ -23,9 +24,9 @@ public class ClienteControllerImpl implements ClientController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Listar todos os clientes", description = "Lista todos os clientes encontrados no sistema. É possível filtrar a busca com base no nome do cliente")
-    public Response findAll(@QueryParam("name") String name) {
-        if (name != null && !name.isEmpty()) {
-            return Response.ok(clienteServiceImpl.findByName(name)).build();
+    public Response findAll(@QueryParam("nome") String nome) {
+        if (nome != null && !nome.isEmpty()) {
+            return Response.ok(clienteServiceImpl.findByName(nome)).build();
         }
         return Response.ok(clienteServiceImpl.findAll()).build();
     }
@@ -50,7 +51,7 @@ public class ClienteControllerImpl implements ClientController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Cadastrar Cliente", description = "Cadastra um novo cliente no sistema")
-    public Response create(ClienteDTO clienteDTO) {
+    public Response create( ClienteDTO clienteDTO) {
         Long id = clienteServiceImpl.create(clienteDTO);
 
         UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();

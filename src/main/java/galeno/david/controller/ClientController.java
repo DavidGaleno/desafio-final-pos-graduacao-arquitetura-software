@@ -1,6 +1,7 @@
 package galeno.david.controller;
 
 import galeno.david.model.ClienteDTO;
+import jakarta.validation.Valid;
 import jakarta.ws.rs.core.Response;
 
 public interface ClientController {
@@ -11,9 +12,9 @@ public interface ClientController {
 
     Response count();
 
-    Response create(ClienteDTO clienteDTO);
+    Response create(@Valid ClienteDTO clienteDTO);
 
-    Response update(ClienteDTO clienteDTO, Long id) ;
+    Response update(@Valid ClienteDTO clienteDTO, Long id) ;
 
     Response delete(Long id);
 }

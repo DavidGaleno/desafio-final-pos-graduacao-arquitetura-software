@@ -7,6 +7,7 @@ import galeno.david.repository.ClienteRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class ClienteServiceImpl implements ClientService {
         return clienteRepository.findById(id);
     }
 
-    public Cliente findByName(String name) {
-        return clienteRepository.findByName(name);
+    public Cliente findByName(String nome) {
+        return clienteRepository.findByName(nome);
     }
 
     public Long count() {
@@ -44,7 +45,7 @@ public class ClienteServiceImpl implements ClientService {
 
     @Transactional
     public void update(ClienteDTO clienteDTO, Long id) {
-        clienteRepository.updateById(clienteDTO.getName(),clienteDTO.getEmail(),id);
+        clienteRepository.updateById(clienteDTO.getNome(),clienteDTO.getEmail(),id);
     }
 
     @Transactional

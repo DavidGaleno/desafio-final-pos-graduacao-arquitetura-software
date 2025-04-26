@@ -11,7 +11,7 @@ public interface ClientService {
 
     Cliente findById(Long id);
 
-    Cliente findByName(String name);
+    Cliente findByName(String nome);
 
     Long count();
 
