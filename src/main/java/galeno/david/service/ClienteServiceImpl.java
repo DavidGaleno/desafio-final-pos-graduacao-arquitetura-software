@@ -7,7 +7,6 @@ import galeno.david.repository.ClienteRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class ClienteServiceImpl implements ClientService {
 
     @Transactional
     public Long create(ClienteDTO clienteDTO) {
-        Cliente cliente  = clienteDTO.toCliente();
+        Cliente cliente = clienteDTO.toCliente();
 
         clienteRepository.persist(cliente);
 
@@ -45,7 +44,7 @@ public class ClienteServiceImpl implements ClientService {
 
     @Transactional
     public void update(ClienteDTO clienteDTO, Long id) {
-        clienteRepository.updateById(clienteDTO.getNome(),clienteDTO.getEmail(),id);
+        clienteRepository.updateById(clienteDTO.getNome(), clienteDTO.getEmail(), clienteDTO.getTelefone(), clienteDTO.getDataNascimento(), clienteDTO.getCpf(), id);
     }
 
     @Transactional
