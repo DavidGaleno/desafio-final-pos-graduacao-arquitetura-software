@@ -24,7 +24,7 @@ public class ClienteServiceImpl implements ClientService {
         return clienteRepository.findById(id);
     }
 
-    public Cliente findByName(String nome) {
+    public List<Cliente> findByName(String nome) {
         return clienteRepository.findByName(nome);
     }
 

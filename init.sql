@@ -6,8 +6,9 @@ CREATE TABLE IF NOT EXISTS cliente (
     cpf VARCHAR(11) UNIQUE NOT NULL,
     data_nascimento DATE NOT NULL
 );
+
 INSERT INTO cliente (nome, email, telefone, cpf, data_nascimento) VALUES
-('João Silva', 'joao.silva@email.com', '11999999999', '12345678901', '1990-05-20'),
+('Gustavo Silva', 'gustavo.silva@email.com', '11999999999', '12345678901', '1990-05-20'),
 ('Maria Souza', 'maria.souza@email.com', '21988888888', '23456789012', '1985-08-15'),
 ('Carlos Pereira', 'carlos.pereira@email.com', '31977777777', '34567890123', '1992-03-10'),
 ('Ana Costa', 'ana.costa@email.com', '41966666666', '45678901234', '1995-11-25'),

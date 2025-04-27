@@ -6,12 +6,13 @@ import io.quarkus.panache.common.Parameters;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.Date;
+import java.util.List;
 
 @ApplicationScoped
 public class ClienteRepository implements PanacheRepository<Cliente> {
 
-    public Cliente findByName(String nome) {
-        return find("nome", nome).firstResult();
+    public List<Cliente> findByName(String nome) {
+        return find("nome like ?1", "%" + nome.toLowerCase() + "%").stream().toList();
     }
 
     public void updateById(String nome, String email, String telefone, Date dataNascimento, String cpf, Long id) {
@@ -31,5 +32,13 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
                         .and("dataNascimento", dataNascimento)
                         .and("id", id)
         );
+    }
+
+    public boolean existsByEmail(String email) {
+        return find("email", email).count() > 0;
+    }
+
+    public boolean existsByCpf(String cpf) {
+        return find("cpf", cpf).count() > 0;
     }
 }
