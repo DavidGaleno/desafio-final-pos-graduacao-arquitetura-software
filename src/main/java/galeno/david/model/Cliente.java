@@ -1,10 +1,9 @@
 package galeno.david.model;
 
-import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "cliente")
@@ -22,5 +21,5 @@ public class Cliente {
     private String email;
     private String cpf;
     @Column(name = "data_nascimento")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 }

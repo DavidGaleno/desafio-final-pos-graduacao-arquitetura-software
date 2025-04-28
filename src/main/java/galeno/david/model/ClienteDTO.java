@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @AllArgsConstructor
@@ -43,7 +43,7 @@ public class ClienteDTO {
     @NotNull(message = "A data de nascimento não pode ser nula")
     @PastOrPresent(message = "A data de nascimento deve ser igual ou menor à data de hoje")
     @MinDate(value = "1900-01-01", message = "A data deve ser a partir de 01/01/1900")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
 
     public Cliente toCliente() {
