@@ -1,6 +1,7 @@
 # desafio-final-pos-graduacao-arquitetura-software
 
 Utilize o comando `docker-compose up` para iniciar o banco de dados e a API.
+A aplicação estará disponível no link: http://localhost:8080/q/api-docs/#/
 
 ## Diagrama de Contexto
 ![Diagrama de Contexto](https://github.com/user-attachments/assets/4ed49227-071b-4f28-bf74-d437f788013b)
