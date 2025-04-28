@@ -33,12 +33,4 @@ public class ClienteRepository implements PanacheRepository<Cliente> {
                         .and("id", id)
         );
     }
-
-    public boolean existsByEmail(String email) {
-        return find("email", email).count() > 0;
-    }
-
-    public boolean existsByCpf(String cpf) {
-        return find("cpf", cpf).count() > 0;
-    }
 }
