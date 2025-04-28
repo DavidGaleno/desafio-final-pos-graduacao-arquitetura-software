@@ -12,7 +12,8 @@ Utilize o comando `docker-compose up` para iniciar o banco de dados e a API.
 ![Diagrama de Componentes](https://github.com/user-attachments/assets/9af2050c-2336-4faf-bc64-4cdceff40c85)
 
 ## Estrutura de Pastas e Explicação dos Componentes
-![image](https://github.com/user-attachments/assets/dd8863a1-3046-4b08-993e-9eb8ebcfaa76)
+![image](https://github.com/user-attachments/assets/1fefcc07-304b-468e-bdd3-93ea65c84f53)
+
 
 
 
