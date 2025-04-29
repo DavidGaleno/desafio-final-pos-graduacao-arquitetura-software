@@ -11,7 +11,7 @@ A aplicação estará disponível no link: http://localhost:8080/q/api-docs/#/
 ![Diagrama de Contêineres](https://github.com/user-attachments/assets/55d0bede-03dc-4841-a54b-bcdd18fdcbd7)
 
 ## Diagrama de Componentes
-![Diagrama de Componentes](https://github.com/user-attachments/assets/194d8d67-cafe-4204-b860-4200b4f87a4a)
+![Diagrama de Componentes](https://github.com/user-attachments/assets/c69379df-3df3-4b58-a555-6c8223cf8d7f)
 
 ## Diagrama de Código
 ![Diagrama de Código](https://github.com/user-attachments/assets/d750ca95-112d-4ec1-9faf-bb99ea1b8ff6)
